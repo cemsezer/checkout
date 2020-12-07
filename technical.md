@@ -41,6 +41,7 @@ class PublishNotificationEventCommandFactory {
 
 class LrsIntegrationService{
 	
+	// Currently TryCreateLrsCheckAsync method only creates an lrs check for a company?
 	TryCreateLrsCheckAsync(){
 		// Create a LRS request using DD-SDK
 		// Persist the reference from POST respons and other details in dynamodb
