@@ -40,8 +40,9 @@ class PublishNotificationEventCommandFactory {
 ```csharp
 
 class CaseEventsProcessor{
-	ProcessCaseEventAsync() {
-		await _dueDiligenceCommandFactory.CreateCommandsAsync(@event);
+	ProcessCaseEventAsync(CaseEvent @event, CancellationToken cancellationToken = default) {
+		var dueDiligenceCommandsResult = await _dueDiligenceCommandFactory.CreateCommandsAsync(@event);
+		await _mediator.SendMany(commands, cancellationToken); // Sends the commands
 	}
 }
 
