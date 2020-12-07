@@ -39,6 +39,15 @@ class PublishNotificationEventCommandFactory {
 
 ```csharp
 
+class DueDiligenceCommandsHandler{
+	Handle(CreateLrsCheck command, CancellationToken cancellationToken){
+		_lrsIntegrationService.TryCreateLrsCheckAsync(command, cancellationToken)
+	}
+	Handle(GetLrsCheckResult command, CancellationToken cancellationToken){
+		_lrsIntegrationService.TryGetLrsCheckResult
+	}
+}
+
 class LrsIntegrationService{
 	
 	// Currently TryCreateLrsCheckAsync method only creates an lrs check for a company?
