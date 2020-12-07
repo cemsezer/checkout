@@ -39,6 +39,22 @@ class PublishNotificationEventCommandFactory {
 
 ```csharp
 
+class CaseEventsProcessor{
+	ProcessCaseEventAsync() {
+		await _dueDiligenceCommandFactory.CreateCommandsAsync(@event);
+	}
+}
+
+class DueDiligenceCommandFactory{
+	CreateCommandsAsync(CaseEvent @event){ 
+		// Handles CaseCreated events
+		_caseFactory.CreateAsync(caseCreated.CaseId); // Actually pulls the case from dynamodb
+		_mapper.MapAsync(@case); // Populates individuals and companies from @case.FormSections.KycKybReview.Data
+		var createLrsCheckCommand = new CreateLrsCheck(individuals, data.Company, caseCreated.CaseId, caseCreated.CorrelationId) // Create a lrs check command
+		new PublishCommand(createLrsCheckCommand, _settings.DueDiligenceQueue)
+	}
+}
+
 class DueDiligenceCommandsHandler{
 	Handle(CreateLrsCheck command, CancellationToken cancellationToken){
 		_lrsIntegrationService.TryCreateLrsCheckAsync(command, cancellationToken)
@@ -53,11 +69,20 @@ class LrsIntegrationService{
 	// Currently TryCreateLrsCheckAsync method only creates an lrs check for a company?
 	TryCreateLrsCheckAsync(){
 		// Create a LRS request using DD-SDK
-		// Persist the reference from POST respons and other details in dynamodb
+		// Persist the reference from POST response and other details into dynamodb
 		// Publish an event CreateCaseDueDiligenceEvent (not a message in the dd queue?) I am not sure who is listenning this event
 		await _lrsService.PostCompanyCheckAsync();
 		_dynamoDbRepository.CreateOrUpdateAsync(ddCheckDocument);
+		var publishEventCommand = _commandFactory.CreateCaseDueDiligenceEvent(@case, command, checkId);
 		_mediator.Send(publishEventCommand, cancellationToken)
+	}
+}
+
+class PublishCaseDueDiligenceEventFactory{
+	CreateCaseDueDiligenceEvent(){
+		// Not sure what and why we are encrypting FormSections.MerchantScreening.Data.Lrs.Data
+		var retrieveLrsCheckData = EncryptionHelper.EncryptObjectAES(@case.FormSections.MerchantScreening.Data.LocalRegistersScreening.Data, _caseEncryptionSecret);
+		CreateLrsCheckCreated(@case, command.CorrelationId, retrieveLrsCheckData, checkId)
 	}
 }
 ```
