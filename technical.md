@@ -44,7 +44,7 @@ class LrsIntegrationService{
 	TryCreateLrsCheckAsync(){
 		// Create a LRS request using DD-SDK
 		// Persist the reference from POST respons and other details in dynamodb
-		// Publish an event CreateCaseDueDiligenceEvent (not a message in the dd queue?)
+		// Publish an event CreateCaseDueDiligenceEvent (not a message in the dd queue?) I am not sure who is listenning this event
 		await _lrsService.PostCompanyCheckAsync();
 		_dynamoDbRepository.CreateOrUpdateAsync(ddCheckDocument);
 		_mediator.Send(publishEventCommand, cancellationToken)
