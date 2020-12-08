@@ -51,17 +51,17 @@ class DueDiligenceCommandFactory{
 		// Handles CaseCreated events
 		_caseFactory.CreateAsync(caseCreated.CaseId); // Actually pulls the case from dynamodb
 		_mapper.MapAsync(@case); // Populates individuals and companies from @case.FormSections.KycKybReview.Data
-		var createLrsCheckCommand = new CreateLrsCheck(individuals, data.Company, caseCreated.CaseId, caseCreated.CorrelationId) // Create a lrs check command
-		new PublishCommand(createLrsCheckCommand, _settings.DueDiligenceQueue)
+		var createLrsCheckCommand = new CreateLrsCheck(individuals, data.Company, caseCreated.CaseId, caseCreated.CorrelationId); // Create a lrs check command
+		new PublishCommand(createLrsCheckCommand, _settings.DueDiligenceQueue);
 	}
 }
 
 class DueDiligenceCommandsHandler{
 	Handle(CreateLrsCheck command, CancellationToken cancellationToken){
-		_lrsIntegrationService.TryCreateLrsCheckAsync(command, cancellationToken)
+		_lrsIntegrationService.TryCreateLrsCheckAsync(command, cancellationToken);
 	}
 	Handle(GetLrsCheckResult command, CancellationToken cancellationToken){
-		_lrsIntegrationService.TryGetLrsCheckResult
+		_lrsIntegrationService.TryGetLrsCheckResult(command, cancellationToken);
 	}
 }
 
