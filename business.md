@@ -32,4 +32,18 @@ automatically to young people living in the UK when they approach the age of 16.
 on a number of official documents. Individuals are notified of their NINO by an official letter, from
 the Department for Work and Pensions or HM Revenue and Customs. However this contains the
 statement, “This is not proof of identity” and therefore it cannot be used to verify the identity of the
-holder. The NINO can be quoted as the tax reference number o
+holder. The NINO can be quoted as the tax reference number
+
+## What is Trulioo?
+
+Trulioo is a Canadian-based company that provides electronic identity and address verification of both individuals and businesses. Trulioo customers use the service to verify the identity of their own customers as part of 'Know Your Customer' verification
+
+## What is KYC and KYB checks?
+KYC or KYC check is the mandatory process of identifying and verifying the identity of the client when opening an account and periodically over time. In other words, banks must make sure that their clients are genuinely who they claim to be.
+
+Know Your Customer (KYC) and Know Your Business (KYB) are the processes whereby a firm identifies and verifies it's individual (KYC) and business (KYB) clients. All regulated businesses must do KYC and KYB checks to assess the suitability of their clients and potential clients and identifying Persons of Significant Control (PSCs), officers and Ultimate Beneficial Owners. 
+
+To perform KYC and KYB checks - also known as Customer Due Diligence - firms need to identify the client and then verify that they are who they say they are. To do this, the firm will need to obtain details about the individual or business. For individuals this will be their name, date of birth and address from individuals. For businesses, this will involve checking the company is registered with Companies House, identifying persons with significant control, officers and ultimate business owners within the company, as well as looking at the company's annual returns and statements. 
+
+While most regulated businesses will do their KYC and KYB checks manually - using physical ID documents such as passports and driving licenses and checking names against sanctions and PEPs lists -  it is quicker and more reliable to use an electronic platform. This will cross-check the details given with multiple data sources (including Companies House, Experian and Equifax and Dow Jones PEP and Sanctions lists) to ensure the most accurate pass rate.
+
