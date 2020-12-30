@@ -47,3 +47,30 @@ To perform KYC and KYB checks - also known as Customer Due Diligence - firms nee
 
 While most regulated businesses will do their KYC and KYB checks manually - using physical ID documents such as passports and driving licenses and checking names against sanctions and PEPs lists -  it is quicker and more reliable to use an electronic platform. This will cross-check the details given with multiple data sources (including Companies House, Experian and Equifax and Dow Jones PEP and Sanctions lists) to ensure the most accurate pass rate.
 
+
+
+## Merchant Application Form (MAF)
+A Merchant Application Form is a document used to receive trader’s personal data. This form is obligatory to gain the right to process payments inside the organization. The application involves the information about the organization, the executives along with partners (owners), and personal data about the owner’s business type along with the information about the account in the financial institution.
+
+By signing the merchant application form, the merchant agrees to fulfill all obligations of the merchant. Besides, he guarantees compliance with holder information security and storage conditions. And he agrees to comprehend the terms of the agreement. Furthermore, the trader is obliged to provide only correct, accurate recent personal data as well as the information about his/her account in the bank.
+
+Example:
+
+My father wants to start his own business. So, he needs to sign the merchant application form first.
+
+The application includes the following range of documents to attach:
+
+* Certificate of incorporation.
+* Certificate of Incumbency (or similar document).
+* Copies of valid passports with visible bearers signatures for all company officers and owners.
+* To successfully open a merchant account, make sure that your website contains the following:
+
+Privacy Policy Page;
+* Terms & Conditions Page;
+* Name of the company in the footer;
+* Contact us button with an email and phone number;
+* Deposit & Refund Policy Page;
+* Visa and Mastercard logos [in case you offer them as payment methods]
+
+## What is a processing statement?
+A merchant processing statement is a report that provides a monthly summary of information about your sales, charges against your sales, monthly fees, and a list of that month’s transactions. 
